@@ -19,12 +19,11 @@ function Dashboard() {
     if (isError) {
       console.log(message);
     }
-
     if (!user) {
       navigate("/login");
+    } else {
+      dispatch(getCards());
     }
-
-    dispatch(getCards());
 
     return () => {
       dispatch(reset());
